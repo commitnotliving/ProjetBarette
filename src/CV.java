@@ -22,4 +22,9 @@ public class CV {
 		
 	}
 	
+	public void affiche() {
+		System.out.println( "Mon nom est: " + nom + "\nMon Prénom est: " + prenom + "\nMa formation est: " + formation + "\nMes années d'expériance: " + experiences 
+				+ "\nMes compétences: " + competences + "\nMes attentes: " + attentes + "\n" );
+	}
+	
 }
