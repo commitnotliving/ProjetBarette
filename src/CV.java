@@ -18,7 +18,16 @@ public class CV {
 }
 
 	public static void main( String[] args ) {
-
+		System.out.println( "Bienvenue chez Barette! \n" );
+		CV cvHogo = new CV("Migner", "Hogo", "Technique Informatique", 0, "Je suis capable de programmer", 
+				"Apprendre beaucoup de choses sur le logiciel Git et GitHub.");
+		
+		cvHogo.affiche();
+		
+		CV cvPhil = new CV("Lalonde", "Philippe","Technique Informatique", 0, "aucune", 
+				"En apprendre sur Git et GitHub.");
+		
+		cvPhil.affiche();
 		
 	}
 	
