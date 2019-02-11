@@ -1,0 +1,6 @@
+Normes de programmation
+Noms: Philippe Lalonde, Hugo Migner
+Nomenclature: Les variables sont nommées selon leur but et attributs. Commence par une minuscule et chaque mot défini a une majuscule en premier. Exemple: nomClient, prixPlat
+Disposition des accolades: La première accolade est disposée sur la même ligne, à droite de la méthode/classe après un espace. La deuxième accolade est sous la dernière ligne du bloc, sur le même espace que le premier caractère de la ligne précédente.
+Espace après des paranthèses: Il y a un espace après les paranthèses, comme dans les "If" ou les cast.
+Commentaires dans le code: Des commantaires peuvent être ajoutés dans le code, peu importe leur position. Bien les entourer avec des "/*" et "*/"

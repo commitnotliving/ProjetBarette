@@ -1,23 +1,31 @@
+import java.util.ArrayList;
 
 public class Commandes {
 
-	public String nom, plat;
+	public String nom;
 	public int quantite;
 
-	Plats die = new Plats();
+	ArrayList<Plats> plat = new ArrayList<>();
 	
+	double total = 0;
+	
+	public Commandes(String nom) {
+		this.nom = nom;
+	}
 
-	public Commandes(String pnom, String pPlat, int pQuantite){
+	public Commandes(String pnom, Plats plat, int pQuantite){
 			nom = pnom;
-			plat = pPlat;	
 			quantite = pQuantite;
-			die = new Plats(plat);
+			this.plat.add(plat);
 	}
 	
 	
 	
 	@Override
 	public String toString() {
-		return nom + " " + die.prix * quantite + "$";
+		for(Plats p : plat) {
+			total += p.prix;
+		}
+		return nom + " " + total + "$";
 	}
 }

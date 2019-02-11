@@ -1,7 +1,6 @@
-
 public class Plats {
 
-	public String nom, plat;
+	public String plat;
 	public double prix;
 
 
@@ -9,27 +8,11 @@ public class Plats {
 		
 	}
 
-	public Plats(String pPlat){
+	public Plats(String pPlat, double prix){
 			
 			plat = pPlat;
-			switch ( plat ) {
-			case "Poutine":
-				prix = 10.5;
-				break;
-				
-			case "Frites":
-				prix = 2.5;
-				break;
-				
-			case "Repas_Poulet":
-				prix = 15.75;
-				break;
-			default:
-				prix = 0;
-				break;
-			}
+			this.prix = prix;
 
 	}
-	
 
 }
