@@ -1,0 +1,9 @@
+ - Gérer les commandes incorrectes,
+Si le nom du client dans une ligne de commandes n'existe pas, un message doit
+s'afficher dans le fichier de sortie. Si les lignes de commandes ne sont pas
+complètes, un autre message doit sortir pour mentionner le problème. Même chose 
+pour les créations de plats. Si une quantité de plats est en décimales,
+un autre message d'erreur va sortir.
+ - Appliquer les taxes sur les prix des commandes,
+La TPS et la TVQ (15% en tout) doivent être appliquées sur le total des commandes
+d'un client, même si celui-ci a commandé plus qu'un plat.
