@@ -1,0 +1,6 @@
+Hugo :
+ - Gérer les commandes incorrectes
+ - Appliquer les taxes sur les prix des commandes
+Phil :
+ - Gérer la sortie sur le terminal et dans un fichier texte bien identifié
+ - S'assurer que les factures à 0$ ne sont pas affichées
