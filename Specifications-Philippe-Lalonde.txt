@@ -1,0 +1,9 @@
+ - Gérer la sortie sur le terminal et dans un fichier texte bien identifié.
+Les messages d'erreurs doivent être affichés en premier dans le fichier
+de sortie. Par la suite, ligne par ligne, on doit être capable de voir le
+nom du client et le total qu'il doit payer. Le fichier texte doit être identifé 
+avec la date et l'heure de la création de la facture.
+ - S'assurer que les factures à 0$ ne sont pas affichées.
+Si un client ne fait pas de commandes, son total sera de 0$. On ne doit
+donc pas afficher la facture pour ce client en particulier dans le fichier
+texte de sortie.
