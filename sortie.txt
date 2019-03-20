@@ -1,7 +1,7 @@
 Bienvenue chez Barette!
 Factures:
 
-Roger 23.0$
+Roger 10.5$
 
 Céline 20.75$
 
