@@ -10,7 +10,8 @@ public class Commandes {
 	public int quantite;
 	NumberFormat nf = NumberFormat.getCurrencyInstance();
 
-	ArrayList<Plats> plat = new ArrayList<>();
+	public ArrayList<Plats> plat = new ArrayList<>();
+	
 	
 	double total = 0;
 	String output = "";
@@ -24,6 +25,8 @@ public class Commandes {
 			quantite = pQuantite;
 			this.plat.add(plat);
 	}
+	
+	
 	
 	public String getTotal() {
 		getPrix();
