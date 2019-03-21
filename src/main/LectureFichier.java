@@ -19,6 +19,7 @@ public class LectureFichier {
 	public ArrayList<Commandes> listeCommandes = new ArrayList<>();
 	
 	public Date date = new Date();
+	public DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd-HH'h'mm");
 	public BufferedReader reader;
 	
 	public LectureFichier() {
@@ -120,7 +121,7 @@ public class LectureFichier {
 	}
 	
 	public void ecrireFichier() throws IOException {
-		BufferedWriter writer = new BufferedWriter(new FileWriter("Facture-du-" + date.getTime() + ".txt"));
+		BufferedWriter writer = new BufferedWriter(new FileWriter("Facture-du-" + dateFormat.format( date ) + ".txt"));
 		for(String s : erreurs) {
 			writer.write( s + "\n" );
 			terminal += (s + "\n");
