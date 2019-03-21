@@ -4,6 +4,7 @@ import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 
+
 public class Commandes {
 
 	public String nom;
@@ -40,19 +41,13 @@ public class Commandes {
 	public double getPrix() {
 		total = 0;
 		for(Plats p : plat) {
-			total +=  ajoutTVQ(ajoutTPS(p.prix)) ;
+			total += p.getPrix();
 		}
 		
 		return total;
 	}
 	
-	public double ajoutTPS(double prix) {
-		return prix * 1.05;
-	}
 	
-	public double ajoutTVQ(double prix) {
-		return prix * 1.10;
-	}
 	
 	@Override
 	public String toString() {
