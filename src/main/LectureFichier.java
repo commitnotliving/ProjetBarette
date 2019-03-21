@@ -26,6 +26,7 @@ public class LectureFichier {
 		
 	}
 	
+	
 	public void lireFichier(String fichier) {
 		ArrayList<Plats> listePlats = new ArrayList<>();
 		
