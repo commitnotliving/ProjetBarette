@@ -23,7 +23,7 @@ public class CommandesTest {
 		double resultat = com.ajoutTPS( 100 );
 		assertEquals(105, resultat, 1);
 	}
-	
+
 	@Test
 	public void testAjoutTVQ() {
 		Commandes com = new Commandes("test");

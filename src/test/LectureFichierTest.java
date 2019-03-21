@@ -28,7 +28,6 @@ public class LectureFichierTest {
 		assertTrue(lecture.erreurs.contains( "La ligne Clients n'est pas lisible." ));
 	}
 	
-	
 	@Test
 	public void testCommandesSansLignePlats() throws IOException {
 		lecture.lireFichier( "testCommandesSansLignePlats.txt" );
@@ -64,6 +63,4 @@ public class LectureFichierTest {
 		lecture.lireFichier( "testCommandesPlatInconnu.txt" );
 		assertTrue(lecture.erreurs.contains( "Le plat Banane n'existe pas." ));
 	}
-	
-
 }
