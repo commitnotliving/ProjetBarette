@@ -14,7 +14,7 @@ public class Commandes {
 	
 	double total = 0;
 	String output = "";
-	
+
 	public Commandes(String nom) {
 		this.nom = nom;
 	}

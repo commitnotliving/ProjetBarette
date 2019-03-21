@@ -13,4 +13,12 @@ class mainTP1TestHugo {
 		assertFalse(resultat);
 	}
 
+	@Test
+	void testFichier() {
+		main.mainTP1.ecrireTerminal();
+		assertTrue(main.mainTP1.fichierEcrit);
+	}
+	
+
 }
+

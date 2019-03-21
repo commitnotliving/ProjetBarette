@@ -10,13 +10,19 @@ public class mainTP1 {
 	public static ArrayList<String> erreurs = new ArrayList();
 	public static String terminal = "";
 	public static boolean terminalEcrit = false;
+	public static boolean fichierEcrit = false;
+	public static ArrayList<Commandes> listeCommandes = new ArrayList<>();
+	
+	public static Date date = new Date();
+	public static DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd-HH'h'mm");
+	
 	
 	public static void main(String[] args) {
 		
-		ArrayList<Commandes> listeCommandes = new ArrayList<>();
+		
 		ArrayList<Plats> listePlats = new ArrayList<>();
-		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd-HH'h'mm");
-		Date date = new Date();
+		
+		
 		
 		boolean nomCheck = false;
 		
@@ -62,7 +68,6 @@ public class mainTP1 {
 										}
 									}
 									nomCheck = true;
-
 								}
 							} 
 						}else {
@@ -77,37 +82,42 @@ public class mainTP1 {
 						nomCheck = false;
 					}
 				}
-			}
+		}
+			ecrireFichier();
 			
-			BufferedWriter writer = new BufferedWriter(new FileWriter("Facture-du-" + dateFormat.format( date ) + ".txt"));
-			for(String s : erreurs) {
-				writer.write( s + "\n" );
-				terminal += (s + "\n");
-				writer.newLine();
-			}
-			writer.write("Bienvenue chez Barette!");
-			terminal += ("Bienvenue chez Barette!\n");
-			writer.newLine();
-			writer.write("Factures:");
-			terminal += ("Factures:\n");
-			writer.newLine();
-			for(Commandes c : listeCommandes) {
-				if ( c.getPrix() != 0 ) {
-					writer.write( "\n" + c );
-					terminal += ( "\n" + c );
-					writer.newLine();
-				}
-			}
-			ecrireTerminal();
-			writer.close();
 			reader.close();
 		} catch (IOException e) {
 			System.out.println(e.getMessage());
 		}
 	}
-	
+
 	public static void ajoutErreur(String s) {
 		erreurs.add( s );
+	}
+	
+	public static void ecrireFichier() throws IOException {
+		BufferedWriter writer = new BufferedWriter(new FileWriter("Facture-du-" + dateFormat.format( date ) + ".txt"));
+		for(String s : erreurs) {
+			writer.write( s + "\n" );
+			terminal += (s + "\n");
+			writer.newLine();
+		}
+		writer.write("Bienvenue chez Barette!");
+		terminal += ("Bienvenue chez Barette!\n");
+		writer.newLine();
+		writer.write("Factures:");
+		terminal += ("Factures:\n");
+		writer.newLine();
+		for(Commandes c : listeCommandes) {
+			if ( c.getPrix() != 0 ) {
+				writer.write( "\n" + c );
+				terminal += ( "\n" + c );
+				writer.newLine();
+			}
+		}
+		ecrireTerminal();
+		writer.close();
+		fichierEcrit = true;
 	}
 	
 	public static void ecrireTerminal() {
