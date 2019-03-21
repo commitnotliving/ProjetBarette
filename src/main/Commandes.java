@@ -40,10 +40,18 @@ public class Commandes {
 	public double getPrix() {
 		total = 0;
 		for(Plats p : plat) {
-			total +=  p.prix * 1.15 ;
+			total +=  ajoutTVQ(ajoutTPS(p.prix)) ;
 		}
 		
 		return total;
+	}
+	
+	public double ajoutTPS(double prix) {
+		return prix * 1.05;
+	}
+	
+	public double ajoutTVQ(double prix) {
+		return prix * 1.10;
 	}
 	
 	@Override

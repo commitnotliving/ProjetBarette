@@ -15,5 +15,20 @@ public class CommandesTest {
 		Commandes com = new Commandes("Paul", plat, 1);
 		assertTrue(com.plat.contains( plat ));
 	}
+	
+	
+	@Test
+	public void testAjoutTPS() {
+		Commandes com = new Commandes("test");
+		double resultat = com.ajoutTPS( 100 );
+		assertEquals(105, resultat, 1);
+	}
+	
+	@Test
+	public void testAjoutTVQ() {
+		Commandes com = new Commandes("test");
+		double resultat = com.ajoutTVQ( 100 );
+		assertEquals(110, resultat, 1);
+	}
 
 }

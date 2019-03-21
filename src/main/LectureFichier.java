@@ -19,7 +19,6 @@ public class LectureFichier {
 	public ArrayList<Commandes> listeCommandes = new ArrayList<>();
 	
 	public Date date = new Date();
-	public DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd-HH'h'mm");
 	public BufferedReader reader;
 	
 	public LectureFichier() {
@@ -33,6 +32,7 @@ public class LectureFichier {
 		boolean clientsPres = false;
 		boolean platsMiss = false;
 		boolean nomCheck = false;
+		boolean platCheck = false;
 		
 		try {
 			reader = new BufferedReader(new FileReader(fichier));
@@ -84,6 +84,7 @@ public class LectureFichier {
 														"La quantité du plat " + commande[1] + " de la commande de "
 																+ commande[0] + " est un nombre décimal." );
 											}
+											platCheck = true;
 										}
 									}
 									nomCheck = true;
@@ -96,9 +97,14 @@ public class LectureFichier {
 						if(!nomCheck && !erreurs.contains( "Le client " + commande[0] + " n'existe pas." )) {
 							ajoutErreur( "Le client " + commande[0] + " n'existe pas." );
 						}
+						if(!platCheck && !erreurs.contains( "Le plat " + commande[1] + " n'existe pas." )) {
+							ajoutErreur( "Le plat " + commande[1] + " n'existe pas." );
+						}
 						ligne = reader.readLine();
 						nomCheck = false;
+						platCheck = false;
 					}
+					
 				}
 		}
 			ecrireFichier();
@@ -114,7 +120,7 @@ public class LectureFichier {
 	}
 	
 	public void ecrireFichier() throws IOException {
-		BufferedWriter writer = new BufferedWriter(new FileWriter("Facture-du-" + dateFormat.format( date ) + ".txt"));
+		BufferedWriter writer = new BufferedWriter(new FileWriter("Facture-du-" + date.getTime() + ".txt"));
 		for(String s : erreurs) {
 			writer.write( s + "\n" );
 			terminal += (s + "\n");

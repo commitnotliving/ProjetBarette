@@ -52,5 +52,18 @@ public class LectureFichierTest {
 		lecture.lireFichier( "testCommandesMalFormulee.txt" );
 		assertTrue(lecture.erreurs.contains( "Une ligne de commande est mal formulée, le nom RogerPoutine a été lu." ));
 	}
+	
+	@Test
+	public void testFichierNomInconnu() {
+		lecture.lireFichier( "testCommandesNomInconnu.txt" );
+		assertTrue(lecture.erreurs.contains( "Le client Paul n'existe pas." ));
+	}
+	
+	@Test
+	public void testFichierPlatInconnu() {
+		lecture.lireFichier( "testCommandesPlatInconnu.txt" );
+		assertTrue(lecture.erreurs.contains( "Le plat Banane n'existe pas." ));
+	}
+	
 
 }
