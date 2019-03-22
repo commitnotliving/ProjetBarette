@@ -47,6 +47,15 @@ public class Commandes {
 		return total;
 	}
 	
+	public double getPrixSansTaxes() {
+		total = 0;
+		for(Plats p : plat) {
+			total += p.getPrixSansTaxes();
+		}
+		
+		return total;
+	}
+	
 	
 	
 	@Override

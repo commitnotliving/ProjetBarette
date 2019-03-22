@@ -44,19 +44,10 @@ public class CommandesTest {
 		assertTrue(com.plat.contains( plat ));
 	}
 	
-	
-//	@Test
-//	public void testAjoutTPS() {
-//		com = new Commandes("test");
-//		double resultat = com.ajoutTPS( 100 );
-//		assertEquals(105, resultat, 0);
-//	}
-//
-//	@Test
-//	public void testAjoutTVQ() {
-//		com = new Commandes("test");
-//		double resultat = com.ajoutTVQ( 100 );
-//		assertEquals(110, resultat, 0.01);
-//	}
+	@Test
+	public void testPrixSansTaxes() {
+		Mockito.when(plat.getPrixSansTaxes()).thenReturn(100.00);
+		assertEquals(100.00, com.getPrixSansTaxes(), 0);
+	}
 
 }

@@ -25,4 +25,8 @@ public class Plats {
 		return this.plat;
 	}
 
+	public double getPrixSansTaxes() {
+		return this.prix;
+	}
+
 }
