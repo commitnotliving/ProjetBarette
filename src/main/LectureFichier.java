@@ -52,7 +52,7 @@ public class LectureFichier {
 						}
 					}
 				}else if(!clientsMiss && !clientsPres) {
-					ajoutErreur( "La ligne Clients n'est pas lisible." );
+					erreurs.add( "La ligne Clients n'est pas lisible." );
 					clientsMiss = true;
 				}
 				if(ligne.equals("Plats:")) {
@@ -64,7 +64,7 @@ public class LectureFichier {
 						ligne = reader.readLine();
 					}
 				}else if(!platsMiss) {
-					ajoutErreur("La ligne Plats n'est pas lisible.");
+					erreurs.add( "La ligne Plats n'est pas lisible." );
 					platsMiss = true;
 				}
 				if(ligne.equals("Commandes:")) {
@@ -82,9 +82,8 @@ public class LectureFichier {
 													c.plat.add( p );
 												}
 											} catch ( NumberFormatException e ) {
-												ajoutErreur(
-														"La quantité du plat " + commande[1] + " de la commande de "
-																+ commande[0] + " est un nombre décimal." );
+												erreurs.add( "La quantité du plat " + commande[1] + " de la commande de "
+												+ commande[0] + " est un nombre décimal." );
 											}
 											platCheck = true;
 										}
@@ -93,14 +92,14 @@ public class LectureFichier {
 								}
 							} 
 						}else {
-							ajoutErreur("Une ligne de commande est mal formulée, le nom " + commande[0] + " a été lu.");
+							erreurs.add( "Une ligne de commande est mal formulée, le nom " + commande[0] + " a été lu." );
 							nomCheck = true;
 						}
 						if(!nomCheck && !erreurs.contains( "Le client " + commande[0] + " n'existe pas." )) {
-							ajoutErreur( "Le client " + commande[0] + " n'existe pas." );
+							erreurs.add( "Le client " + commande[0] + " n'existe pas." );
 						}
 						if(!platCheck && !erreurs.contains( "Le plat " + commande[1] + " n'existe pas." )) {
-							ajoutErreur( "Le plat " + commande[1] + " n'existe pas." );
+							erreurs.add( "Le plat " + commande[1] + " n'existe pas." );
 						}
 						ligne = reader.readLine();
 						nomCheck = false;
@@ -116,11 +115,6 @@ public class LectureFichier {
 			System.out.println(e.getMessage());
 		}
 	}
-	
-	public void ajoutErreur(String s) {
-		erreurs.add( s );
-	}
-	
 	
 	public void ecrireFichier() throws IOException {
 		BufferedWriter writer = new BufferedWriter(new FileWriter("Facture-du-" + dateFormat.format( date ) + ".txt"));

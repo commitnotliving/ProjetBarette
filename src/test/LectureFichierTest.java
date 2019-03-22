@@ -12,7 +12,7 @@ public class LectureFichierTest {
 
 	@Test
 	public void testAjoutErreur() {
-		lecture.ajoutErreur( "Test" );
+		lecture.erreurs.add( "Test" );
 		assertTrue(lecture.erreurs.contains( "Test" ));
 	}
 	
