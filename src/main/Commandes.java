@@ -29,15 +29,6 @@ public class Commandes {
 	
 	
 	
-	public String getTotal() {
-		getPrix();
-		
-		output = nom + " " + nf.format( total );
-		total = 0;
-		
-		return output;
-	}
-	
 	public double getPrix() {
 		total = 0;
 		for(Plats p : plat) {
@@ -56,10 +47,13 @@ public class Commandes {
 		return total;
 	}
 	
-	
-	
 	@Override
 	public String toString() {
-		return getTotal();
+		getPrix();
+		
+		output = nom + " " + nf.format( total );
+		total = 0;
+		
+		return output;
 	}
 }
