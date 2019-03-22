@@ -13,7 +13,6 @@ public class Commandes {
 
 	public ArrayList<Plats> plat = new ArrayList<>();
 	
-	
 	double total = 0;
 	String output = "";
 
