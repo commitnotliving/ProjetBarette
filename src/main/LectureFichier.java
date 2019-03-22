@@ -121,6 +121,7 @@ public class LectureFichier {
 		erreurs.add( s );
 	}
 	
+	
 	public void ecrireFichier() throws IOException {
 		BufferedWriter writer = new BufferedWriter(new FileWriter("Facture-du-" + dateFormat.format( date ) + ".txt"));
 		for(String s : erreurs) {
